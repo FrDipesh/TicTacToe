@@ -1,17 +1,11 @@
 import java.util.Scanner;
+import javax.swing.*;
+import java.util.SortedMap;
 
-public class TicTacToe {
-    //Create board outside main method
+public class InputHelper {
     static String [][] board = new String[3][3];
-    Scanner scan = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        //Game simulation happens here
-        String cleanBoard = InputHelper
-    }
-
-
-    //Helper methods go here
     private static String clearBoard(Scanner scan, String prompt){
         boolean clearBoard = false;
         String userInput = "";
@@ -62,25 +56,6 @@ public class TicTacToe {
         return userInput;
     }
 
-    public static String getYNConfirm(Scanner scan, String prompt) {
-        boolean validYN = false;
 
-        String question= "";
-
-        System.out.println(prompt);
-        do {
-            if (scan.hasNextLine()) {
-                question = scan.nextLine();
-                if (question.equalsIgnoreCase("y")) {
-                    validYN = true;
-                } else if (question.equalsIgnoreCase("n")) {
-                    validYN = true;
-                } else {
-                    System.out.println("Invalid Please pick [Y] or [N]");
-                }
-            }
-        } while (!validYN);
-        return question;
-    }
 
 }
