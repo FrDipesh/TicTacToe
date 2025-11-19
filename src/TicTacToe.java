@@ -7,80 +7,32 @@ public class TicTacToe {
 
     public static void main(String[] args) {
         //Game simulation happens here
-        String cleanBoard = InputHelper
+        System.out.println("Welcome to Tic-Tac-Toe!");
+        clearBoard();
+        displayBoard();
     }
 
 
     //Helper methods go here
-    private static String clearBoard(Scanner scan, String prompt){
-        boolean clearBoard = false;
-        String userInput = "";
-
-        System.out.println(prompt);
-        do {
-            if (scan.hasNextLine()) {
-                userInput = scan.nextLine();
-                if (userInput.equalsIgnoreCase("y")) {
-                    for (int r = 0; r < board.length; r++) {
-                        for (int c = 0; c < board[0].length; c++){
-                            board[r][c] = "-";
-                        }
-                        for (r = 0; r < board.length; r++) {
-                            for (int c = 0; c < board[0].length; c++) {
-                                System.out.printf("%-4d", board[r][c]);
-                            }
-                            System.out.println();
-                        }
-
-                    }
-                    clearBoard = true;
-                } else if (userInput.equalsIgnoreCase("n")) {
-                    clearBoard = true;
-                } else {
-                    System.out.println("Invalid Please pick [Y] or [N]");
-                }
+    private static void clearBoard(){
+        for (int r = 0; r < board.length; r++) {
+            for (int c = 0; c < board[0].length; c++){
+                board[r][c] = "-";
             }
-        } while (!clearBoard);
-        return userInput;
-
+        }
     }
 
-    public static String getNonZeroLenString(Scanner scan, String prompt) {
-        boolean valid = false;
-        String userInput;
-
-        System.out.println(prompt);
-        do {
-            userInput = scan.nextLine();
-            if (userInput.length() > 0) {
-                valid = true;
+    private static void displayBoard(){
+        for (int r = 0; r < board.length; r++) {
+            for (int c = 0; c < board[0].length; c++) {
+                System.out.printf("%-4s", board[r][c]);
             }
-            else{
-                System.out.println("Error - must enter string of non-zero length");
-            }
-        } while (!valid);
-        return userInput;
+            System.out.println();
+        }
     }
 
-    public static String getYNConfirm(Scanner scan, String prompt) {
-        boolean validYN = false;
+    private static boolean isValidMove(int row, int col){
 
-        String question= "";
-
-        System.out.println(prompt);
-        do {
-            if (scan.hasNextLine()) {
-                question = scan.nextLine();
-                if (question.equalsIgnoreCase("y")) {
-                    validYN = true;
-                } else if (question.equalsIgnoreCase("n")) {
-                    validYN = true;
-                } else {
-                    System.out.println("Invalid Please pick [Y] or [N]");
-                }
-            }
-        } while (!validYN);
-        return question;
     }
 
 }
