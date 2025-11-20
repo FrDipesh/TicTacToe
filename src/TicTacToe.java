@@ -10,8 +10,8 @@ public class TicTacToe {
         System.out.println("Welcome to Tic-Tac-Toe!");
         clearBoard();
         displayBoard();
+        isValidMove();
     }
-
 
     //Helper methods go here
     private static void clearBoard(){
@@ -32,6 +32,13 @@ public class TicTacToe {
     }
 
     private static boolean isValidMove(int row, int col){
+        String blankSpace = "-";
+        if (board[row][col].equals("-")) {
+            return  true;
+            else{
+                return false;
+            }
+        }
 
     }
 
