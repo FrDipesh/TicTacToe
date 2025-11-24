@@ -67,6 +67,10 @@ public class TicTacToe {
         return false;
     }
 
+    private static boolean isTie(String player1, String player2){
+
+    }
+
 
 
 }
